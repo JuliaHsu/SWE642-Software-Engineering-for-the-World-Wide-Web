@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="true" key="J2EE_EXPORT_OVERWRITE"/>
+	<item value="true" key="J2EE_EXPORT_SOURCE"/>
+	<list key="J2EE_IMPORT_APP_CLIENT">
+		<item value="/Users/julia/Desktop/jaxrs-ri/lib/jersey-media-sse.jar"/>
+		<item value="/Users/julia/Documents/GeorgeMason/master/Spring_2020/SWE642/hw_src/swe642_group/RestfulWS/WebContent/WEB-INF/lib/antlr-2.7.7.jar"/>
+	</list>
+	<list key="MRU_RUNTIME_STORE">
+		<item value="Apache Tomcat v9.0"/>
+		<item value="NULL_RUNTIME"/>
+	</list>
+	<list key="J2EE_EXPORT_JST_WEB">
+		<item value="/Users/julia/Documents/GeorgeMason/master/Spring_2020/SWE642/hw_src/hw3_group/studentSurvey_swe642/studentSurvey_swe642.war"/>
+	</list>
+</section>

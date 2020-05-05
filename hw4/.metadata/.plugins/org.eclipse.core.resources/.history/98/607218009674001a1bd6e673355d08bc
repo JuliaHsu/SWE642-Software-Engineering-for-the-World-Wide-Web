@@ -1,0 +1,84 @@
+package studentSurvey_swe642;
+
+public class StudentBean {
+	private String fullName, streetAdd, city, state, zip, phone, email, url;
+	private int studentID;
+	
+	public StudentBean( int studentID,String fullName, String streetAdd, String city, String state, String zip,
+			String phone, String email, String url){
+		this.studentID = studentID;
+		this.fullName = fullName;
+		this.streetAdd = streetAdd;
+		this.city = city;
+		this.state = state;
+		this.zip = zip;
+		this.phone = phone;
+		this.email = email;
+		this.url = url;
+		
+	}
+	public void setFullName(String fullName){
+		this.fullName  = fullName;
+	}
+	public String getFullName(){
+		return this.fullName;
+	}
+	
+	public void setStudentID(int studentID){
+		this.studentID = studentID;
+	}
+	
+	public int getStudentID(){
+		return this.studentID;
+	}
+	
+	public void setStreetAdd(String streetAdd){
+		this.streetAdd = streetAdd;
+	}
+	public String getStreetAdd(){
+		return this.streetAdd;
+	}
+	
+	public void setState(String state){
+		this.state = state;
+	}
+	public String getState(){
+		return this.state;
+	}
+	
+	public void setCity(String city){
+		this.city = city;
+	}
+	public String getCity(){
+		return this.city;
+	}
+	
+	public void setZip(String zip){
+		this.zip = zip;
+	}
+	public String getZip(){
+		return this.zip;
+	}
+	
+	public void setPhone(String phone){
+		this.phone = phone;
+	}
+	public String getPhone(){
+		return this.phone;
+	}
+
+	public void setEmail(String email){
+		this.email = email;
+	}
+	public String getEmail(){
+		return this.email;
+	}
+	
+	public void setUrl(String url){
+		this.url = url;
+	}
+	public String getUrl(){
+		return this.url;
+	}
+	
+}

@@ -1,0 +1,27 @@
+<p>survey-details works!</p>
+
+<section *ngIf="surveys" class = "panel-body">
+    <table class= "table-striped table-bordered table-hover table-condensed">
+        <tr *ngFor = "let survey of surveys">
+            <td>
+                    <p>Submit date: {{survey.date}}</p>
+                    <p>Full Name: {{survey.fullName}}</p>
+                    <p>Street Address: {{survey.address}}</p>
+                    <p>City: {{survey.city}}</p>
+                    <p>State: {{survey.state}}</p>
+                    <p>Zip Code: {{survey.zip}}</p>
+                    <p>Phone: {{survey.phone}}</p>
+                    <p>Email: {{survey.email}}</p>
+                    <p>Url: {{survey.url}}</p>
+                    <p>What do you like the most about the campus? {{survey.likeMost}}</p>
+                    <p>How you became interested in the university? {{survey.hearFrom}}</p>
+                    <p>Graduate Month: {{survey.gradMonth}}</p>
+                    <p>Graduate Year: {{survey.gradYear}}</p>
+                    <p>How likely are you going to recommend this school to other prospective students? {{survey.recommend}}</p>
+                    <p>Feedback: {{survey.feedback}}</p>
+                    <hr>
+            </td>
+        </tr>
+    </table>
+
+</section>

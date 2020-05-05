@@ -1,0 +1,26 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" import = "studentSurvey_swe642.StudentBean"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CS Department Survey</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+<script type="text/javascript" src="index.js"></script>
+</head>
+<body>
+	<%! String studentID=""; %>
+	<% studentID =request.getParameter("ID");%>
+	<p><%= studentID %></p>
+	
+	<%-- <c:forEach var="student" items = "${students}">
+		<li>${student.studentID}
+		</li>
+	</c:forEach> --%>
+      
+</body>
+</html>

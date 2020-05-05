@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="BIG5">
+		<title>Student Survey Form</title>
+	</head>
+	<body>
+		
+		<h1>Student Survey Form</h1>
+		<div class="form">
+		<form  #surveyForm = "ngForm" enctype="multipart/form-data" >
+		<!-- <form method="post" action="localhost:8080/swe645-restful-api/restful/survey/create" >  -->
+
+			<!-- <h2>Personal Info (Date: {{today}})</h2> -->
+			<label class="left" for="fullName">Full Name</label>
+			<label class="right" for="stuId">Student Id</label>
+			<br>
+			<input type="text" id="fName" name="fullName" placeholder="first name..." [(ngModel)]="surveyInfo.fullName" />
+			<input class="right" type="text" id="stuId" name="studentId" placeholder="111" [(ngModel)]="surveyInfo.studentId" />
+			<br><br>
+			<label class="left" for="address">Street Address</label>
+			<br>
+			<input class="whole" type="text" id="address" name="address" placeholder="address..." [(ngModel)]="surveyInfo.address" />
+			<br><br>
+			<label class="left" for="city">City</label>
+			<label class="right" for="state">State</label>
+			<br>
+			<input class="left" type="text" id="city" name="city" placeholder="eg:Fairfax" [(ngModel)]="surveyInfo.city" />
+			<input class="right" type="text" id="state" name="state" placeholder="eg:Virginia" [(ngModel)]="surveyInfo.state" />
+			<br><br>
+			
+			<label class="left" for="zip">Zip</label>
+			<label class="right" for="phone">Phone Number</label>
+			<br>
+			<input class="left" type="text" id="zip" name="zip" placeholder="eg:12345" [(ngModel)]="surveyInfo.zip" />
+			<input class="right" type="text" id="phone" name="phone" placeholder="eg:xxx-xxx-xxxx" [(ngModel)]="surveyInfo.phone" />
+			<br><br>
+			
+			<label class="left" for="email">Email</label>
+			<label class="right" for="date">Date of this survey</label>
+			<br>
+			<input class="left" type="text" id="email" name="email" placeholder="xxx@xxx" [(ngModel)]="surveyInfo.email" />
+			<input class="right" type="text" id="date" name="date" placeholder="mm/dd/yyyy" [(ngModel)]="surveyInfo.date" />
+			<!-- <label class="right" for="date">{{today}}</label> -->
+			<br><br><hr>
+			
+			
+			
+			<h2>Survey</h2>
+			
+			<p class="question">What do you like the most about the campus?</p>
+			<label class="box" for="like1">{{likeMostVal[0]}}</label>
+			<input type="checkbox" id="like1" name="likeMost"  value="likeMostVal[0]" [(ngModel)]="surveyInfo.likeMostArr[0]" />
+			<label class="box" for="like2">{{likeMostVal[1]}}</label>
+			<input type="checkbox" id="like2" name="likeMost" value="likeMostVal[1]" [(ngModel)]="surveyInfo.likeMostArr[1]" />
+			<label class="box" for="like3">{{likeMostVal[2]}}</label>
+			<input type="checkbox" id="like3" name="likeMost" value="likeMostVal[2]" [(ngModel)]="surveyInfo.likeMostArr[2]" />
+			<br>
+			<label class="box" for="like4">{{likeMostVal[3]}}</label>
+			<input type="checkbox" id="like4" name="likeMost" value="likeMostVal[3]" [(ngModel)]="surveyInfo.likeMostArr[3]" />
+			<label class="box" for="like5">{{likeMostVal[4]}}</label>
+			<input type="checkbox" id="like5" name="likeMost" value="likeMostVal[4]" [(ngModel)]="surveyInfo.likeMostArr[4]" />
+			<label class="box" for="like6">{{likeMostVal[5]}}</label>
+			<input type="checkbox" id="like6" name="likeMost" value="likeMostVal[5]" [(ngModel)]="surveyInfo.likeMostArr[5]" />
+			
+			<br><br>
+			<p class="question">How you became interested in the university?</p>
+			<label class="box" for="interest1">friends</label>
+			<input type="radio" id="interest1" name="hearFrom" value="friends"  [(ngModel)]="surveyInfo.hearFrom"/><br>
+			<label class="box" for="interest2">television</label>
+			<input type="radio" id="interest2" name="hearFrom" value="television"  [(ngModel)]="surveyInfo.hearFrom"/><br>
+			<label class="box" for="interest3">Internet</label>
+			<input type="radio" id="interest3" name="hearFrom" value="Internet" [(ngModel)]="surveyInfo.hearFrom" /><br>
+			<label class="box" for="interest4">other</label>
+			<input type="radio" id="interest4" name="hearFrom" value="other"  [(ngModel)]="surveyInfo.hearFrom"/><br>
+			
+			<br><br>
+
+			<label class="left" for="gradMonth">graduation month</label>
+			<label class="right" for="gradYear">graduation year</label>
+			<br>
+			<input class="left" type="text" id="gradMonth" name="gradMonth" placeholder="month" [(ngModel)]="surveyInfo.gradMonth" />
+			<input class="right" type="text" id="gradYear" name="gradYear" placeholder="mm/dd/yyyy" [(ngModel)]="surveyInfo.gradYear" />
+			<br><br>
+
+			<p class="question">How likely are you going to recommend this school to other prospective students?</p>
+			<select id="recommend" name="recommend" [(ngModel)]="surveyInfo.recommend">
+    		  <option value="Very Likely">Very Likely</option>
+    		  <option value="Likely">Likely</option>
+    		  <option value="Unlikely">Unlikely</option>
+    		  <option value="Very Unlikely">Very Unlikely</option>
+   			 </select>
+			
+
+			<br><br>
+			<p class="question">Raffle Time!!! Please type in at least ten numbers from 1 to 100(seperated with comma).</p>
+			<input class="whole" type="text" name="raffle" placeholder="eg: 1,13,22,4,15.....">
+		
+			<br><br><hr>
+			<p class="professional">Thank you for doing this survey with us, if you have any question about the survey, please leave the comments here.</p>
+			<textarea id="feedback"  name = "feedback" rows="8" cols="60" style="width:470px;" [(ngModel)]="surveyInfo.feedback"></textarea>
+			<br><br><br>
+			<!-- <div *ngIf="this.message.fName==''||this.message.lName==''||this.message.address==''">
+				Please fill in all the personla info
+			</div> -->
+			<button type="submit" (click)="onClickSubmit()">Submit</button>
+			<!-- <button type="button" (click)="cancel()">Cancel</button>	 -->
+		</form>
+		
+		</div>
+	</body>
+</html>

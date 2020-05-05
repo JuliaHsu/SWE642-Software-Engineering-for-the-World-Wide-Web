@@ -1,0 +1,187 @@
+<form *ngIf="!submitted" action="new" method="post" autocomplete="on" [formGroup]= "surveyForm" (ngSubmit)="onSubmit()" >
+    <div id="form" class="w3-container">
+        <div class="w3-row-padding">
+            <div id="info" class="w3-col l4 m12 margtest">
+                <div class="info_block"><label>Full Name</label><input  id='fullname' type="text" name= "fullName" [(ngModel)]="surveyInfo.fullName" placeholder="Full Name" required autofocus
+                  formControlName="fullName" [class.is-invalid]="fullName.invalid && fullName.touched"
+                  ><label>*</label>
+                  <div *ngIf="fullName.invalid && fullName.touched">
+                      <small *ngIf="fullName.errors?.required" class="text-danger">This field is required</small>
+                      <small *ngIf="fullName.errors?.minlength" class="text-danger">at least 3 characters</small>
+                      <small *ngIf="fullName.errors?.pattern" class="text-danger">Name can only contains letters and space</small>
+                  </div>
+                </div>
+                
+                <div class="info_block"><label>Student ID</label><input type="text" pattern="\d*" id='idNum' name= "studentId" [(ngModel)]="surveyInfo.studentId" placeholder="111" required
+                  formControlName="studentId" [class.is-invalid]="studentId.invalid && studentId.touched"
+                  ><label>*</label>
+                  <div *ngIf="studentId.invalid && studentId.touched">
+                    <small *ngIf="studentId.errors?.required" class="text-danger">This field is required</small>
+                  </div>
+                </div>
+               
+                <div class="info_block"><label>Street Address</label><input type="text" id='street' name= "address" [(ngModel)]="surveyInfo.address" placeholder="Street Address" required
+                  formControlName="streetAdd" [class.is-invalid]="streetAdd.invalid && streetAdd.touched"
+                  ><label>*</label>
+                  <div *ngIf="streetAdd.invalid && streetAdd.touched">
+                    <small *ngIf="streetAdd.errors?.required" class="text-danger">This field is required</small>
+                  </div>
+                </div>
+               
+                <div class="info_block"><label>City</label><input type="text" id='city' name= "city" [(ngModel)]="surveyInfo.city" placeholder="City" required
+                  formControlName="city" [class.is-invalid]="city.invalid && city.touched"
+                  ><label>*</label>
+                  <div *ngIf="city.invalid && city.touched">
+                    <small *ngIf="city.errors?.required" class="text-danger">This field is required</small>
+                  </div>
+                </div>
+                
+                <div class="info_block"><label>State</label><input type="text" id='state' name= "state" [(ngModel)]="surveyInfo.state" placeholder="State" required
+                  formControlName="state" [class.is-invalid]="state.invalid && state.touched"
+                  ><label>*</label>
+                  <div *ngIf="state.invalid && state.touched">
+                    <small *ngIf="state.errors?.required" class="text-danger">This field is required</small>
+                  </div>
+                </div>
+                
+                <div class="info_block"><label>Zip Code</label><input id='zipcode' type="number" name= "zip" [(ngModel)]="surveyInfo.zip" placeholder="Zip Code" required
+                  formControlName="zip" [class.is-invalid]="zip.invalid && zip.touched"
+                  ><label>*</label> 
+                  <div *ngIf="zip.invalid && zip.touched">
+                    <small *ngIf="zip.errors?.required" class="text-danger">This field is required</small>
+                  </div>
+                </div>
+  
+                <div class="info_block"><label>Phone Number</label><input id='phunenum' type="tel" name= "phone" [(ngModel)]="surveyInfo.phone" placeholder="123-456-7890" required pattern="\d{3}[\-]\d{3}[\-]\d{4}" required
+                  formControlName="phone" [class.is-invalid]="phone.invalid && phone.touched"
+                  ><label>*</label>
+                  <div *ngIf="phone.invalid && phone.touched">
+                    <small *ngIf="phone.errors?.required" class="text-danger">This field is required</small>
+                    <small *ngIf="phone.errors?.pattern" class="text-danger">Please enter in 000-000-0000 format</small>
+                  </div>
+                </div>
+                
+                <div class="info_block"><label>Email</label><input id='email' type="email" name= "email" [(ngModel)]="surveyInfo.email" placeholder="johnsmith@email.com" required
+                  formControlName="email" [class.is-invalid]="email.invalid && email.touched"
+                  ><label>*</label>
+                  <div *ngIf="email.invalid && email.touched">
+                    <small *ngIf="email.errors?.required" class="text-danger">This field is required</small>
+                  </div>
+                </div>
+                
+                <div class="info_block"><label>URL</label><input id='url' type="url" name= "url" [(ngModel)]="surveyInfo.url" placeholder="https://..." required
+                  formControlName="url" [class.is-invalid]="url.invalid && url.touched"
+                  ><label>*</label>
+                  <div *ngIf="url.invalid && url.touched">
+                    <small *ngIf="url.errors?.required" class="text-danger">This field is required</small>
+                  </div>
+                </div>
+                
+                <div class="info_block"><label>Today's Date</label><input id='date' type="date" name= "todayDate" [(ngModel)]="surveyInfo.todayDate"
+                  formControlName="todayDate"><label>*</label>
+                </div>
+  
+                <p id="formNote">* are required fields</p>
+            </div>
+            <div class="w3-col l4 m12 margtest">
+              
+              <div formArrayName="likeMostsArray" >
+                <p>What do you like most about the campus?</p>
+                <div *ngFor="let unit of surveyForm.controls.likeMostsArray.controls; let i = index;">
+                  <div>
+                    <label>
+                      <input type="checkbox" name = "likeMost" [(ngModel)]="surveyInfo.likeMostArr[i]" [formControlName]="i" [value]="mostLikes[i].value">
+                      {{mostLikes[i].name}}
+                    </label>
+                  </div>
+                </div>
+              </div>
+                <div *ngIf="f['likeMostsArray'].invalid && f['likeMostsArray'].touched">
+                  <small *ngIf="f['likeMostsArray'].errors" class="text-danger">Please choose at least two</small>
+                </div>
+                <!-- <p>Status {{f['likeMostsArray'].valid}}</p> -->
+              
+                <!-- <p>What do you like most about the campus?</p>
+                <label>
+                    <input type="checkbox" name= "likeMost" value="students">
+                </label>Students <br>
+                <label>
+                    <input type="checkbox" name= "likeMost" value="location">
+                </label>Location <br>
+                <label>
+                    <input type="checkbox" name= "likeMost" value="campus">
+                </label>Campus <br>
+                <label>
+                    <input type="checkbox" name= "likeMost" value="atmosphere">
+                </label>Atmosphere <br>
+                <label>
+                    <input type="checkbox" name= "likeMost" value="dormRooms">
+                </label>Dorm Rooms <br>
+                <label>
+                    <input type="checkbox" name= "likeMost" value="sports">
+                </label>Sports <br> -->
+  
+                <p><label>*</label>How do you hear about us?</p>
+                <label>
+                  <input type="radio" name="hearFrom" [(ngModel)]="surveyInfo.hearFrom" value="friends" formControlName="howBecomeInterested" >
+                </label>Friends and Family <br>
+                <label>
+                    <input type="radio" name="hearFrom" [(ngModel)]="surveyInfo.hearFrom" value="socialMedia" formControlName="howBecomeInterested" >
+                </label>Social Media <br>
+                <label>
+                    <input type="radio" name="hearFrom" [(ngModel)]="surveyInfo.hearFrom" value="television" formControlName="howBecomeInterested"  >
+                </label>Television <br>
+                <label>
+                    <input type="radio" name="hearFrom" [(ngModel)]="surveyInfo.hearFrom" value="internet" formControlName="howBecomeInterested"  >
+                </label>Internet <br>
+                <label>
+                    <input type="radio" name="hearFrom" [(ngModel)]="surveyInfo.hearFrom" value="other" formControlName="howBecomeInterested"  >
+                </label>Other <br>
+                
+                <p><label>*</label>Your high school graduation time:</p>
+                <select name="gradMonth" [(ngModel)]="surveyInfo.gradMonth" required 
+                formControlName="gradMonth" [class.is-invalid]="gradMonth.invalid && gradMonth.touched" >
+                    <option value="">- Month -</option>
+                    <option *ngFor="let gradMonth of gradMonths">{{gradMonth}}</option>
+                </select>
+                
+                <input type="number" name= "gradYear" [(ngModel)]="surveyInfo.gradYear" placeholder="yyyy" required pattern="\d{4}" required 
+                formControlName="gradYear" [class.is-invalid]="gradYear.invalid && gradYear.touched"> 
+                  <div *ngIf="gradMonth.invalid && gradMonth.touched">
+                    <small *ngIf="gradMonth.errors?.required" class="text-danger">Graduation month is required</small>
+                  </div>
+                  <div *ngIf="gradYear.invalid && gradYear.touched">
+                    <small *ngIf="gradYear.errors?.required" class="text-danger">Graduation year is required</small>
+                  </div>
+                <br>
+            </div>
+            <div class="w3-col l4  m12 margtest">
+                <div>
+                    <p><label>*</label>Would you recommend us to your friends and family?</p>
+                    <select name="recommend" [(ngModel)]="surveyInfo.recommend" required formControlName="howLikely" [class.is-invalid]="howLikely.invalid && howLikely.touched">
+                        <option value="">-Please select-</option>
+                        <option *ngFor="let howLikely of likely">{{howLikely}}</option>
+                    </select>
+                    <div *ngIf="howLikely.invalid && howLikely.touched">
+                      <small *ngIf="howLikely.errors?.required" class="text-danger">Please choose one</small>
+                    </div>
+                </div>
+                <p>Please leave us your feedback:</p>
+                <textarea name="feedback" [(ngModel)]="surveyInfo.feedback" placeholder="Your Message" cols="35" rows="5" formControlName="feedBack"></textarea> <br>
+                <button type="reset" (click)="onReset()">Reset</button><br><br>
+                <button type="submit" (click)="onSubmit()">Submit</button><br><br>
+                <div class="compute">
+                    <label>Data</label><input type="text"  id="dataBox" name="data" 
+                    formControlName="data" [class.is-invalid]="data.invalid && data.touched">
+                    <small>Please enter 10 integers between 1 ~ 100, separated by "," </small>
+                    <div *ngIf="data.invalid && data.touched">
+                      <small *ngIf="data.errors?.required" class="text-danger">This field is required</small>
+                      <small *ngIf="data.errors?.dataRangeCheckFailed" class="text-danger">please check your numbers</small>
+                    </div>
+                    <br><br><br><br><br>
+                    <!-- <p> data range status {{data.valid}} </p> -->
+                </div>
+            </div>
+        </div>
+    </div>
+  </form>

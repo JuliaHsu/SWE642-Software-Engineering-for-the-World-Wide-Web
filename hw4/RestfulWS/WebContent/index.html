@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CS Department Survey</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+    <script type="text/javascript" src="index.js"></script>
+
+</head>
+<body>
+<header>
+    <nav>
+        <div class="flex">
+            <div>
+                <img src="image/biglogo.jpg" alt="GMULogo" id="bigLogo">
+            </div>
+            <div id="headline">
+                <h2>Department of</h2>
+                <h1>COMPUTER SCIENCE</h1>
+            </div>
+            <div id="button">
+                <button id="surveyButton"><a href="../hw1/index.html">Back to CS Department</a></button>
+            </div>
+        </div>
+    </nav>
+</header>
+<div id="surveyPage"></div>
+<div id="surveyTitle">
+    <h1 class="bigSurvey">SURVEY</h1>
+    <h4>We would like to hear from a prospective student!</h4>
+    <h5>Please provide your feedback about your campus visit.</h5>
+</div>
+<form action="rest/studentSurvey/create" method="post" autocomplete="on">
+    <div id="form" class="w3-container">
+        <div class="w3-row-padding">
+            <div id="info" class="w3-col l4 m12 margtest">
+                <div class="info_block"><label>Full Name</label><input  id='fullname' type="text" name= "fullName" placeholder="Full Name" required autofocus><label>*</label>
+                </div>
+                <div class="info_block"><label>Student ID</label><input type="text" pattern="\d*" id='idNum' name= "studentId" placeholder="111" required><label>*</label>
+                </div>
+                <div class="info_block"><label>Street Address</label><input type="text" id='street' name= "address" placeholder="Street Address" required><label>*</label>
+                </div>
+                <div class="info_block"><label>City</label><input type="text" id='city' name= "city" placeholder="City" required><label>*</label>
+                </div>
+                <div class="info_block"><label>State</label><input type="text" id='state' name= "state" placeholder="State" required><label>*</label>
+                </div>
+                <div class="info_block"><label>Zip Code</label><input id='zipcode' type="number" name= "zip" placeholder="Zip Code"><label>*</label> <label class="zip_code_error hide">an invalid zip</label>
+                </div>
+                <div class="info_block"><label>Phone Number</label><input id='phunenum' type="tel" name= "phone" placeholder="123-456-7890" required pattern="\d{3}[\-]\d{3}[\-]\d{4}" required><label>*</label>
+                </div>
+                <div class="info_block"><label>Email</label><input id='email' type="email" name= "email" placeholder="johnsmith@email.com" required><label>*</label>
+                </div>
+                <div class="info_block"><label>URL</label><input id='url' type="url" name= "url" placeholder="https://..." required><label>*</label>
+                </div>
+                <div class="info_block"><label>Today's Date</label><input id='date' type="date" name= "date" ><label>*</label>
+                </div>
+                <p id="formNote">* are required fields</p>
+            </div>
+            <div class="w3-col l4 m12 margtest">
+                <p>What do you like most about the campus?</p>
+                <label>
+                    <input type="checkbox" name= "likeMost" value="students">
+                </label>Students <br>
+                <label>
+                    <input type="checkbox" name= "likeMost" value="location">
+                </label>Location <br>
+                <label>
+                    <input type="checkbox" name= "likeMost" value="campus">
+                </label>Campus <br>
+                <label>
+                    <input type="checkbox" name= "likeMost" value="atmosphere">
+                </label>Atmosphere <br>
+                <label>
+                    <input type="checkbox" name= "likeMost" value="dormRooms">
+                </label>Dorm Rooms <br>
+                <label>
+                    <input type="checkbox" name= "likeMost" value="sports">
+                </label>Sports <br>
+                <p><label>*</label>How do you hear about us?</p>
+                <label>
+                    <input type="radio" name="hearFrom" value="friends"  >
+                </label>Friends and Family <br>
+                <label>
+                    <input type="radio" name="hearFrom" value="socialMedia">
+                </label>Social Media <br>
+                <label>
+                    <input type="radio" name="hearFrom" value="television">
+                </label>Television <br>
+                <label>
+                    <input type="radio" name="hearFrom" value="internet">
+                </label>Internet <br>
+                <label>
+                    <input type="radio" name="hearFrom" value="other">
+                </label>Other <br>
+                <p><label>*</label>Your high school graduation time:</p>
+                <select name="gradMonth" required>
+                    <option>- Month -</option>
+                    <option value="January">January</option>
+                    <option value="Febuary">Febuary</option>
+                    <option value="March">March</option>
+                    <option value="April">April</option>
+                    <option value="May">May</option>
+                    <option value="June">June</option>
+                    <option value="July">July</option>
+                    <option value="August">August</option>
+                    <option value="September">September</option>
+                    <option value="October">October</option>
+                    <option value="November">November</option>
+                    <option value="December">December</option>
+                </select>
+                <input type="number" name= "gradYear" placeholder="yyyy" required pattern="\d{4}" required> <br>
+            </div>
+            <div class="w3-col l4  m12 margtest">
+                <div>
+                    <p><label>*</label>Would you recommend us to your friends and family?</p>
+                    <select name="recommend" required>
+                        <option >-Please select-</option>
+                        <option value="Very Likely">Very Likely</option>
+                        <option value="Likely">Likely</option>
+                        <option value="Unlikely">Unlikely</option>
+                    </select>
+                </div>
+                <p>Please leave us your feedback:</p>
+                <textarea name="feedback" placeholder="Your Message" cols="35" rows="5"></textarea> <br>
+                <button onclick="reset()">Reset</button><br><br>
+                <button type="submit">Submit</button><br><br>
+                <div class="compute">
+                    <label>Data</label><input type="text"  id="dataBox" name="data"><br><br><br><br><br>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<footer class="footer">
+    <div>
+    	<div id="groupMember">
+            <div>Group Member: Hsin-Ping Hsu</div>
+            <div>Group Member: Yuxi Miao</div>
+        </div>
+    </div>
+    <div id="footNode">
+        <p>Department of Computer Science</p>
+        <p>Nguyen Engineering Building</p>
+        <p>4400 University Drive</p>
+        <p>Fairfax, VA 22030</p>
+    </div>
+    <div id="footerLogo">
+        <a href="https://www2.gmu.edu/"><img src="image/biglogo.jpg" height="150" alt="GMUlogo"></a>
+    </div>
+</footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

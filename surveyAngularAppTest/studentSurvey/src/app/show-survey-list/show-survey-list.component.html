@@ -1,0 +1,14 @@
+<p>show-survey-list works!</p>
+
+<section *ngIf="surveys" class = "panel-body">
+    <table class= "table-striped table-bordered table-hover table-condensed">
+        <tr *ngFor = "let survey of surveys">
+            <!-- <td> <a  routerLink = "survey-details" >{{survey.stuId}}</a></td> -->
+            <td>
+                <a href="#" [routerLink]="['details/survey-', survey.stuId]">
+					{{survey.stuId}}</a>
+            </td>
+        </tr>
+    </table>
+
+</section>

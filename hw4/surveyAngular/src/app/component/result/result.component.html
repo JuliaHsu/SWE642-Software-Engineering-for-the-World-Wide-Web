@@ -1,0 +1,22 @@
+<div *ngIf="submitted">
+    <div class="showNotice">
+        <div id="infoSaved">
+            <p>Your information was successfully saved to a database table!</p>
+        </div>
+        <div id="noticeSection">
+            <p *ngIf="avg<=90" >Thank the user for filling out the form!</p>
+            <strong *ngIf="avg>90" class="text-danger">Congratulations! You are the winner of two movie tickets.</strong>
+        </div>
+    </div>  
+    <div class="showResult">
+        <div>The Mean of your 10 numbers is {{avg}}</div>
+        <div>The Standard Deviation is {{avgSD}}</div>
+    </div>
+    <div>
+        <!-- <button type="button" label="Click" (click)="showList()"><i>click to show survey list</i></button> -->
+        <div>
+            <show-survey-list> [showMePartially]="showVar"></show-survey-list>
+        </div>
+   </div>
+        
+</div>

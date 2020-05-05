@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Thu Apr 30 14:05:09 PDT 2020:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.11.1.1 - (1616546): instance a816c00e-0171-cce8-526a-000015905638 
+on database directory memory:/home/gbadner/git/hibernate-orm-5.4.15/hibernate-core/hibernate-orm-testing with class loader sun.misc.Launcher$AppClassLoader@659e0bfd 
+Loaded from file:/home/gbadner/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.11.1.1/df4b50061e8e4c348ce243b921f53ee63ba9bbe1/derby-10.11.1.1.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_172-ea-b03
+user.dir=/home/gbadner/git/hibernate-orm-5.4.15/hibernate-core
+os.name=Linux
+os.arch=amd64
+os.version=4.17.3-100.fc27.x86_64
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''

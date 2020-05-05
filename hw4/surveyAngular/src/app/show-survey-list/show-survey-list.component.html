@@ -1,0 +1,13 @@
+<div>
+    <p>List of Submmited Survey</p>
+    <section *ngIf="surveys" class = "panel-body">
+        <ul *ngFor = "let survey of surveys">
+            <li>
+                <a href="#" [routerLink]="['/survey-details', survey.studentId]">
+                    {{survey.studentId}}</a>
+                </li>
+        </ul>
+    </section>
+</div>
+
+        
