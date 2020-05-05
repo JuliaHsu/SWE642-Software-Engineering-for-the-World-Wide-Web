@@ -48,7 +48,7 @@ export class FormComponent implements OnInit {
   likely=['Very Likely','Likely','Unlikely'];
   
   // mapping check box to string
-  likeMostVal:string[] = ['students','location','campus','dorm rooms','atmosphere','sports']
+  likeMostVal:string[] = ['students','location','campus','atmosphere','dorm rooms','sports']
   
   //  getter methods to get FormControl elements in the FormGroup and communicate with .html
   get fullName(){
@@ -245,7 +245,7 @@ standardDeviation(values: string){
 likeMostParse (b:boolean[]):string{
   let temp='';
   b.forEach((value, index) => {
-    value?(temp=temp+'  '+this.likeMostVal[index]):temp=temp;
+    value?(temp=temp+' & '+this.likeMostVal[index]):temp=temp;
   });
   return temp;
 }
