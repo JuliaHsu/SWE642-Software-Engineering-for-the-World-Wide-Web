@@ -7,7 +7,7 @@
                   ><label>*</label>
                   <div *ngIf="fullName.invalid && fullName.touched">
                       <small *ngIf="fullName.errors?.required" class="text-danger">This field is required</small>
-                      <small *ngIf="fullName.errors?.minlength" class="text-danger">at least 3 characters</small>
+                      <!-- <small *ngIf="fullName.errors?.minlength" class="text-danger">at least 3 characters</small> -->
                       <small *ngIf="fullName.errors?.pattern" class="text-danger">Name can only contains letters and space</small>
                   </div>
                 </div>
@@ -96,6 +96,7 @@
                   </div>
                 </div>
               </div>
+              
                 <div *ngIf="f['likeMostsArray'].invalid && f['likeMostsArray'].touched">
                   <small *ngIf="f['likeMostsArray'].errors" class="text-danger">Please choose at least two</small>
                 </div>
@@ -123,19 +124,19 @@
   
                 <p><label>*</label>How do you hear about us?</p>
                 <label>
-                  <input type="radio" name="hearFrom" [(ngModel)]="surveyInfo.hearFrom" value="friends" formControlName="howBecomeInterested" >
+                  <input type="radio" name="hearFrom" [(ngModel)]="surveyInfo.hearFrom" value="friends" formControlName="hearFrom" >
                 </label>Friends and Family <br>
                 <label>
-                    <input type="radio" name="hearFrom" [(ngModel)]="surveyInfo.hearFrom" value="socialMedia" formControlName="howBecomeInterested" >
+                    <input type="radio" name="hearFrom" [(ngModel)]="surveyInfo.hearFrom" value="socialMedia" formControlName="hearFrom" >
                 </label>Social Media <br>
                 <label>
-                    <input type="radio" name="hearFrom" [(ngModel)]="surveyInfo.hearFrom" value="television" formControlName="howBecomeInterested"  >
+                    <input type="radio" name="hearFrom" [(ngModel)]="surveyInfo.hearFrom" value="television" formControlName="hearFrom"  >
                 </label>Television <br>
                 <label>
-                    <input type="radio" name="hearFrom" [(ngModel)]="surveyInfo.hearFrom" value="internet" formControlName="howBecomeInterested"  >
+                    <input type="radio" name="hearFrom" [(ngModel)]="surveyInfo.hearFrom" value="internet" formControlName="hearFrom"  >
                 </label>Internet <br>
                 <label>
-                    <input type="radio" name="hearFrom" [(ngModel)]="surveyInfo.hearFrom" value="other" formControlName="howBecomeInterested"  >
+                    <input type="radio" name="hearFrom" [(ngModel)]="surveyInfo.hearFrom" value="other" formControlName="hearFrom"  >
                 </label>Other <br>
                 
                 <p><label>*</label>Your high school graduation time:</p>
