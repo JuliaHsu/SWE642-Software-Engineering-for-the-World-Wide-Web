@@ -23,6 +23,7 @@ export class FormComponent implements OnInit {
   sharedServiceInit: SharedService
   restCreateUrl:string = 'http://localhost:8080/RestfulWS/rest/studentSurvey/create'
   surveyInfo:SurveyService = new SurveyService() 
+  mostLikes: Array<any>;
   constructor(private fb: FormBuilder, userService: UserService, sharedService: SharedService, private http:HttpClient,  private router:Router){
     
     sharedService.setSubmmited(this.submitted);
@@ -31,17 +32,19 @@ export class FormComponent implements OnInit {
       {
         console.log(response);
       })
+      this.mostLikes = [
+        {name: 'Students', value: "students"},
+        {name: 'Location', value: "location"},
+        {name: 'Campus', value: "campus"},
+        {name: 'Atmosphere', value: "atmosphere"},
+        {name: 'DormRooms', value: "dormRooms"},
+        {name: 'Sports', value: "sports"}
+      ];
 
+      
   }
 
-  mostLikes: any[] = [
-    {name: 'Students', value: "students"},
-    {name: 'Location', value: "location"},
-    {name: 'Campus', value: "campus"},
-    {name: 'Atmosphere', value: "atmosphere"},
-    {name: 'DormRooms', value: "dormRooms"},
-    {name: 'Sports', value: "sports"}
-  ];
+  
   surveyForm : FormGroup;
   gradMonths=['January','February','March','April','May','June','July','August','September','October','November','December'];
   
@@ -85,8 +88,8 @@ export class FormComponent implements OnInit {
     return this.surveyForm.get('url');
   }
 
-  get howBecomeInterested(){
-    return this.surveyForm.get('howBecomeInterested');
+  get hearFrom(){
+    return this.surveyForm.get('hearFrom');
   }
 
   get gradMonth(){
@@ -106,8 +109,8 @@ export class FormComponent implements OnInit {
   }
   
   ngOnInit() {
-   // sharedService.setSubmmited(this.submitted);
-
+    debugger;
+  // sharedService.setSubmmited(this.submitted);
   // const currentDate = new Date().toLocaleString("en-US", {timeZone: "America/New_York"}); //.toISOString().substring(0, 10);
   const currentDate = new Date().toISOString().substring(0, 10);
     //using the .group() method in FormBuilder to create a FormGroup with a group of FormControl elements
@@ -131,7 +134,7 @@ export class FormComponent implements OnInit {
       HearFromValidators.multipleCheckboxRequireTwo
     ),
 
-    howBecomeInterested: ['',[Validators.required],],
+    hearFrom: ['',[Validators.required],],
     gradMonth: ['',[Validators.required]],
     gradYear: ['',[Validators.required]],
     howLikely: ['',[Validators.required]],

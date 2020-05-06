@@ -10,7 +10,6 @@ export class HearFromValidators {
         count += 1
       }
     }
-    console.log(count);
     return count > 1 ? null : {
       multipleCheckboxRequireTwo: true
     };
