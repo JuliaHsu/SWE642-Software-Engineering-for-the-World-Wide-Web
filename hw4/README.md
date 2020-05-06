@@ -19,7 +19,7 @@
 * To access the GMU Oracle Database, please make sure to connect to the GMU VPN 
 
 ##### Access Student Survey Form (frontend)
-* To verify Node.JS and npm are properly installed, 
+* To verify node.js and npm are properly installed, 
   run node -v to check node.js version,
   then run mpn -v to check npm version.
 * To install the Angular CLI globally, please run npm install -g @angular/cli
