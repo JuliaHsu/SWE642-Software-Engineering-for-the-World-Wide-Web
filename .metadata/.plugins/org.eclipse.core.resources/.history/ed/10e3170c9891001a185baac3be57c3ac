@@ -8,7 +8,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.persistence.*;
 import javax.xml.bind.JAXB;
 import java.util.Date;
-// survey entity
+
 
 @Entity
 @Table(name = "studentSurvey")
@@ -22,7 +22,17 @@ public class studentSurvey implements Serializable{
 	private static final long serialVersionUID = 1L;
     @Id
     @Basic (optional = false)
-
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @Column(name = "SURVEY_ID", updatable = false, nullable = false)
+////    @GeneratedValue
+//    private BigDecimal SURVEY_ID;
+//	private Long surveyId;
+//    public void setSurveuId(Long surveyId){
+//    	this.surveyId = surveyId;
+//    }
+//    public Long getSurveyId(){
+//    	return surveyId;
+//    }
 	@Column(name = "STUDENT_ID",length=32, nullable = false)
 	private String studentId;
 	public void setStudentId(String studentId) {

@@ -12,7 +12,7 @@ import java.util.List;
 import javax.ejb.Stateless;
  
 import java.util.Date;
-// survey resource
+// survey resourcs
 @Stateless
 @Path("studentSurvey")
 public class studentSurveyResource {
