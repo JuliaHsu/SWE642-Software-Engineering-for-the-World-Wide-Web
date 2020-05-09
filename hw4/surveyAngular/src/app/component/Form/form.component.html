@@ -86,7 +86,7 @@
             <div class="w3-col l4 m12 margtest">
               
               <div formArrayName="likeMostsArray" >
-                <p>What do you like most about the campus?</p>
+                <p><label>*</label>What do you like most about the campus?</p>
                 <div *ngFor="let unit of surveyForm.controls.likeMostsArray.controls; let i = index;">
                   <div>
                     <label>
@@ -167,7 +167,7 @@
                       <small *ngIf="howLikely.errors?.required" class="text-danger">Please choose one</small>
                     </div>
                 </div>
-                <p>Please leave us your feedback:</p>
+                <p><label>*</label>Please leave us your feedback:</p>
                 <textarea name="feedback" [(ngModel)]="surveyInfo.feedback" placeholder="Your Message" cols="35" rows="5" formControlName="feedBack"></textarea> <br>
                 <button type="reset" (click)="onReset()">Reset</button><br><br>
                 <button type="submit" (click)="onSubmit()">Submit</button><br><br>
