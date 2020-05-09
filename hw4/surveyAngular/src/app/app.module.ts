@@ -26,6 +26,6 @@ import { SurveyDetailsComponent } from './survey-details/survey-details.componen
     HttpClientModule
   ],
   providers: [],
-  bootstrap: [AppComponent, FormComponent, ResultComponent]
+  bootstrap: [AppComponent, FormComponent, ResultComponent, ShowSurveyListComponent, SurveyDetailsComponent]
 })
 export class AppModule { }

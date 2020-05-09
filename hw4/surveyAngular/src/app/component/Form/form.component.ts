@@ -109,7 +109,7 @@ export class FormComponent implements OnInit {
   }
   
   ngOnInit() {
-    debugger;
+   // debugger;
   // sharedService.setSubmmited(this.submitted);
   // const currentDate = new Date().toLocaleString("en-US", {timeZone: "America/New_York"}); //.toISOString().substring(0, 10);
   const currentDate = new Date().toISOString().substring(0, 10);
@@ -182,6 +182,7 @@ standardDeviation(values: string){
 
   onSubmit() {
     // stop here if form is invalid
+    //debugger;
     if (this.surveyForm.invalid) {
         alert("Please check your form!")
         return;
