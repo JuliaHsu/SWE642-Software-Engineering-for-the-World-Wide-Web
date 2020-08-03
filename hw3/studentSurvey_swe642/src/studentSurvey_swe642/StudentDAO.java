@@ -17,7 +17,7 @@ public class StudentDAO {
 			// register JDBC driver
             Class.forName("oracle.jdbc.driver.OracleDriver");
 //            System.out.println("registered successfully!");
-            conn = DriverManager.getConnection("jdbc:oracle:thin:@artemis.vsnet.gmu.edu:1521/vse18c.vsnet.gmu.edu","hhsu2","ugloogla");
+            conn = DriverManager.getConnection("jdbc:oracle:thin:@artemis.vsnet.gmu.edu:1521/vse18c.vsnet.gmu.edu","","");
            // drop table
 //            Statement stmt = conn.createStatement();
 //    	    String sqlDrop = "DROP TABLE STUDENTSURVEY ";
